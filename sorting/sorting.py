@@ -18,3 +18,19 @@ def insertion_sort(test_list):
                 break
 
     return test_list
+
+
+def selection_sort(test_list):
+    for i in range(0, len(test_list)-1):
+        idx_of_minimum = get_index_of_min(test_list, i)
+        if idx_of_minimum != i:
+            test_list[i], test_list[idx_of_minimum] = test_list[idx_of_minimum], test_list[i]
+
+    return test_list
+
+
+def get_index_of_min(lis, start_idx):
+    minimum = min(lis[start_idx:])
+    idx = lis[start_idx:].index(minimum) + start_idx
+
+    return idx

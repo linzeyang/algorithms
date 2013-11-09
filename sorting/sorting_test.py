@@ -14,9 +14,8 @@ class SortingTestCase(TestCase):
 
 
     def test_bubble_sort_with_ultra_long_list(self):
-        test_list = range(10**4)
-        test_list = reverse_list(test_list)
-        expected_list = range(10**4)
+        test_list = range(10**4 - 1, 0, -1)
+        expected_list = range(1, 10**4)
 
         self.assertEqual(bubble_sort(test_list), expected_list)
 
@@ -29,11 +28,24 @@ class SortingTestCase(TestCase):
 
 
     def test_insertion_sort_with_ultra_long_list(self):
-        test_list = range(10**4)
-        test_list = reverse_list(test_list)
-        expected_list = range(10**4)
+        test_list = range(10**4 - 1, 0, -1)
+        expected_list = range(1, 10**4)
 
         self.assertEqual(insertion_sort(test_list), expected_list)
+
+
+    def test_selection_sort_with_short_list(self):
+        test_list = [27, 33, 28, 4, 2, 26, 13, 35, 8, 14]
+        expected_list = [2, 4, 8, 13, 14, 26, 27, 28, 33, 35]
+
+        self.assertEqual(selection_sort(test_list), expected_list)
+
+
+    def test_selection_sort_with_ultra_long_list(self):
+        test_list = range(10**4 - 1, 0, -1)
+        expected_list = range(1, 10**4)
+
+        self.assertEqual(selection_sort(test_list), expected_list)
 
 
 def reverse_list(original_list):
