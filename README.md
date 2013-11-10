@@ -1,4 +1,9 @@
 algorithms
 ==========
 
-Algorithm Practices
+Algorithm Practices  
+* Sorting
+    * Bubble
+    * Insertion
+    * Selection
+* Searching
