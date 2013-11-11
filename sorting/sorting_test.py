@@ -48,6 +48,20 @@ class SortingTestCase(TestCase):
         self.assertEqual(selection_sort(test_list), expected_list)
 
 
+    def test_merge_sort_with_short_list(self):
+        test_list = [27, 33, 28, 4, 2, 26, 13, 35, 8, 14]
+        expected_list = [2, 4, 8, 13, 14, 26, 27, 28, 33, 35]
+
+        self.assertEqual(merge_sort(test_list), expected_list)
+
+
+    def test_merge_sort_with_ultra_long_list(self):
+        test_list = range(10**4 - 1, 0, -1)
+        expected_list = range(1, 10**4)
+
+        self.assertEqual(merge_sort(test_list), expected_list)
+
+
 def reverse_list(original_list):
     length = len(original_list)
     reversed_list = []

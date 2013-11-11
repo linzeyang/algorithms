@@ -29,6 +29,38 @@ def selection_sort(test_list):
     return test_list
 
 
+def merge_sort(test_list):
+    length = len(test_list)
+
+    if length < 2:
+        return test_list
+    else:
+        middle = int(length/2)
+        left_list = test_list[:middle]
+        right_list = test_list[middle:]
+        left_list = merge_sort(left_list)
+        right_list = merge_sort(right_list)
+        new_list = []
+
+        idx_left = 0
+        idx_right = 0
+
+        while idx_left < len(left_list) and idx_right < len(right_list):
+            if left_list[idx_left] < right_list[idx_right]:
+                new_list.append(left_list[idx_left])
+                idx_left += 1
+            else:
+                new_list.append(right_list[idx_right])
+                idx_right += 1
+
+        if idx_left == len(left_list):
+            new_list += right_list[idx_right:]
+        else:
+            new_list += left_list[idx_left:]
+
+        return new_list
+
+
 def get_index_of_min(lis, start_idx):
     minimum = min(lis[start_idx:])
     idx = lis[start_idx:].index(minimum) + start_idx
