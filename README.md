@@ -6,4 +6,8 @@ Algorithm Practices
     * Bubble
     * Insertion
     * Selection
+    * Merge
 * Searching
+    * N/A
+* Mathematics
+    * Factorial
