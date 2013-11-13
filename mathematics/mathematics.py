@@ -18,3 +18,13 @@ def factorial_recursive(n):
     else:
         return n * factorial_recursive(n-1)
 
+
+def fibonacci_recursive(n):
+    if n == 0:
+        return [0]
+    elif n == 1:
+        return [0, 1]
+    else:
+        previous = fibonacci_recursive(n - 1)
+        previous.append(previous[-2] + previous[-1])
+        return previous
